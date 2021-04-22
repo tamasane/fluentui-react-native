@@ -1,13 +1,14 @@
 import { createAppleTheme } from '@fluentui-react-native/apple-theme';
-import { createDefaultTheme, ThemeOptions } from '@fluentui-react-native/default-theme';
+import { createDefaultTheme } from '@fluentui-react-native/default-theme';
 import { ThemeReference } from '@fluentui-react-native/theme';
 import { Platform } from 'react-native';
 import { applyBrand, OfficeBrand } from './applyBrand';
 import { applyTheme, ThemeNames } from './applyTheme';
-import { createAndroidTheme } from '@fluentui-react-native/android-theme';
+import { createAndroidTheme, ThemeOptions } from '@fluentui-react-native/android-theme';
 
-const themeOptions: ThemeOptions = { paletteName: 'TaskPane', appearance: 'dynamic' };
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const customTheme = require('./customTheme');
+const themeOptions: ThemeOptions = { paletteName: 'TaskPane', appearance: 'dynamic', customTheme: customTheme };
 const baseTheme = Platform.select({
   android: createAndroidTheme(themeOptions),
   ios: createAppleTheme(),

@@ -6,12 +6,13 @@ import { Theme } from '@fluentui-react-native/theme-types';
 export interface ThemeOptions {
   appearance?: 'light' | 'dark' | 'dynamic';
   paletteName?: string;
+  customTheme?: any;
 }
 
 export function createAndroidTheme(options: ThemeOptions = {}): ThemeReference {
   const themeRef = new ThemeReference({} as Theme, () => {
     const current = options.appearance == 'dynamic' ? (Appearance && Appearance.getColorScheme()) || 'light' : options.appearance;
-    return getAndroidTheme(current);
+    return getAndroidTheme(current, options.customTheme);
   });
 
   if (Appearance && options.appearance === 'dynamic') {

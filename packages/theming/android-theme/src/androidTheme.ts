@@ -43,12 +43,15 @@ export const androidComponents = {
   },
 };
 
-export function getAndroidTheme(appearance: 'light' | 'dark'): Theme {
+export function getAndroidTheme(appearance: 'light' | 'dark', customTheme: {}): Theme {
   return {
-    colors: paletteFromAndroidColors(getFluentUIAndroidPalette(getAndroidPalette(appearance))),
+    colors: paletteFromAndroidColors(
+      getFluentUIAndroidPalette(getAndroidPalette(appearance, customTheme['baseColors']), customTheme['semanticColors']),
+      customTheme['tokens'],
+    ),
     typography: androidTypography(),
     spacing: androidSpacing(),
-    components: androidComponents,
+    components: { ...androidComponents, ...customTheme['components'] },
     host: { appearance },
   };
 }

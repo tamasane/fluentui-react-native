@@ -187,6 +187,10 @@ export const androidPaletteDark: AndroidBaseColorsPalette = {
   warningTint40: '#021D0B',
 };
 
-export function getAndroidPalette(appearance: 'light' | 'dark') {
-  return appearance == 'dark' ? androidPaletteDark : androidPaletteLight;
+export function getAndroidPalette(appearance: 'light' | 'dark', customTheme: any) {
+  const customThemeLight = customTheme['light'];
+  const customThemeDark = customTheme['dark'];
+  const darkPallete = { ...androidPaletteDark, ...customThemeDark };
+  const lightPallete = { ...androidPaletteLight, ...customThemeLight };
+  return appearance == 'dark' ? darkPallete : lightPallete;
 }

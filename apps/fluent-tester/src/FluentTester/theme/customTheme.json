@@ -1,0 +1,50 @@
+{
+  "baseColors": {
+    "light": {
+      "communicationBlue": "#FF0000"
+    },
+    "dark": {
+      "communicationBlue": "#00FF00"
+    }
+  },
+  "semanticColors": {
+    "mappings": {
+      "textPrimary": "successPrimary"
+    },
+    "overrides": {
+      "textPrimary": "red"
+    }
+  },
+  "tokens": {
+    "mappings": {},
+    "overrides": {}
+  },
+  "components": {
+    "Button": {
+      "tokens": {
+        "borderRadius": 12,
+        "borderWidth": 1
+      },
+      "root": {
+        "style": {
+          "margin": 8
+        }
+      },
+      "stack": {
+        "style": {
+          "paddingVertical": 14,
+          "paddingHorizontal": 20
+        }
+      },
+      "icon": {
+        "style": {
+          "marginEnd": 10
+        }
+      },
+      "content": {
+        "variant": "heroSemibold",
+        "height": 18
+      }
+    }
+  }
+}
