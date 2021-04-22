@@ -17,10 +17,28 @@ export function androidSpacing(): Spacing {
 export const androidComponents = {
   Button: {
     tokens: {
-      borderRadius: 4,
+      borderRadius: 12,
       borderWidth: 1,
-      minHeight: 48,
-      minWidth: 92,
+    },
+    root: {
+      style: {
+        margin: 8,
+      },
+    },
+    stack: {
+      style: {
+        paddingVertical: 14,
+        paddingHorizontal: 20,
+      },
+    },
+    icon: {
+      style: {
+        marginEnd: 10,
+      },
+    },
+    content: {
+      variant: 'bodySemibold',
+      height: 18,
     },
   },
 };
