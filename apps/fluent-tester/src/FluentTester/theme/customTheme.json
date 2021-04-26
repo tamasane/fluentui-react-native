@@ -1,19 +1,18 @@
 {
+  // buttons use communicationBlue as color
   "baseColors": {
     "light": {
-      "communicationBlue": "#FF0000"
+      "communicationBlue": "#ff0000"
     },
     "dark": {
-      "communicationBlue": "#00FF00"
+      "communicationBlue": "#00ff00"
     }
   },
   "semanticColors": {
     "mappings": {
       "textPrimary": "successPrimary"
     },
-    "overrides": {
-      "textPrimary": "red"
-    }
+    "overrides": {}
   },
   "tokens": {
     "mappings": {},

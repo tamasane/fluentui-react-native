@@ -1,6 +1,6 @@
 import { ColorValue } from '@fluentui-react-native/theme-types';
 import { AndroidBaseColorsPalette } from './androidBaseColors';
-import { semanticToBase } from './lookupSemanticBase';
+import { semanticToBase, semanticToBaseDark } from './lookupSemanticBase';
 
 export interface SemanticPalette {
   //Texts
@@ -57,9 +57,11 @@ export interface SemanticPalette {
 export type FluentUIAndroidPalette = AndroidBaseColorsPalette & SemanticPalette;
 
 export function getFluentUIAndroidPalette(p: AndroidBaseColorsPalette, customLookupTable?: any): FluentUIAndroidPalette {
-  const lookupTable = { ...semanticToBase, ...customLookupTable['mappings'] };
+  let lookupTable = { ...semanticToBase, ...customLookupTable['mappings'] };
+  const appearanceLight = p['variant'] == 'light';
+  if (!appearanceLight) lookupTable = { ...lookupTable, ...semanticToBaseDark };
 
-  return p['variant'] == 'light'
+  return appearanceLight
     ? {
         ...p,
         textDominant: p[lookupTable['textDominant']],

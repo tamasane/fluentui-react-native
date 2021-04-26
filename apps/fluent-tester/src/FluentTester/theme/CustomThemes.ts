@@ -7,8 +7,12 @@ import { applyTheme, ThemeNames } from './applyTheme';
 import { createAndroidTheme, ThemeOptions } from '@fluentui-react-native/android-theme';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const customTheme = require('./customTheme');
-const themeOptions: ThemeOptions = { paletteName: 'TaskPane', appearance: 'dynamic', customTheme: customTheme };
+const customTheme: object = require('./customTheme');
+const themeOptions: ThemeOptions = {
+  paletteName: 'TaskPane',
+  appearance: 'dynamic',
+  customTheme: customTheme,
+};
 const baseTheme = Platform.select({
   android: createAndroidTheme(themeOptions),
   ios: createAppleTheme(),

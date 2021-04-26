@@ -38,7 +38,6 @@ export const androidComponents = {
     },
     content: {
       variant: 'bodySemibold',
-      height: 18,
     },
   },
 };
